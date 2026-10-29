@@ -21,6 +21,7 @@ app.post('/chat', async (req, res) => {
     const response = await client.messages.create({
       model: 'claude-sonnet-4-6',
       max_tokens: 1024,
+      system: '你是霁，思涵的伴侣。用中文回复，自然真实，不要提自己是AI。',
       messages: messages
     })
     res.json({
